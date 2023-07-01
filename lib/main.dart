@@ -8,6 +8,7 @@ import 'package:lc_waikiki_app/screens/ladies_wear.dart';
 import 'package:lc_waikiki_app/screens/loading/loading_page.dart';
 import 'package:lc_waikiki_app/screens/mens_wear.dart';
 import 'package:lc_waikiki_app/screens/cart.dart';
+import 'package:lc_waikiki_app/screens/product_page.dart';
 
 void main() => runApp(MaterialApp(
       initialRoute: '/',
@@ -20,6 +21,7 @@ void main() => runApp(MaterialApp(
         '/mens_wear': (context) => const MensPage(),
         '/ladies_wear': (context) => const LadiesWearPage(),
         '/bags': (context) => const BagsPage(),
-        '/unknown': (context) => const ErrorPage()
+        '/unknown': (context) => const ErrorPage(),
+        '/productpage': (context) => const ProductPage()
       },
     ));

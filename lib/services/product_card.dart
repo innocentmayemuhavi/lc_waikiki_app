@@ -14,38 +14,49 @@ class ProductCard extends StatefulWidget {
 class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0.4,
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(7, 10, 7, 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(
-              height: 150,
-              child: Image.asset(
-                widget.data.image,
-                height: 300,
-                fit: BoxFit.cover,
+    return InkWell(
+      onTap: () {
+        // Handle the click event here
+        print('Product name:${widget.data.name}');
+        Navigator.pushNamed(context, '/productpage', arguments: widget.data);
+      },
+      child: Card(
+        elevation: 0.4,
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(7, 10, 7, 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(
+                height: 150,
+                child: Image.asset(
+                  widget.data.image,
+                  height: 300,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 5.0,
-            ),
-            Center(
-              child: Text(
-                widget.data.name,
-                style: productnamestyle,
-                textAlign: TextAlign.center,
+              const SizedBox(
+                height: 5.0,
               ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Center(
-                child: Text(widget.data.price.toString(),
-                    style: PriceTextStyles, textAlign: TextAlign.center)),
-          ],
+              Center(
+                child: Text(
+                  widget.data.name,
+                  style: productnamestyle,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Center(
+                child: Text(
+                  widget.data.price.toString(),
+                  style: PriceTextStyles,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
