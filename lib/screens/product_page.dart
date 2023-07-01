@@ -26,7 +26,7 @@ class _ProductPageState extends State<ProductPage> {
           ),
         ),
         content: Text(
-          "You Have Added ${product.name} of size ${product.size} to Cart of Price ${product.price}",
+          "You Have Added ${product.name} of size ${product.size} to Cart of Price KES: ${product.price}",
         ),
         actions: <CupertinoDialogAction>[
           CupertinoDialogAction(
