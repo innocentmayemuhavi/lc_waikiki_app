@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:lc_waikiki_app/firebase/auth.dart';
 
 class DrawerPage extends StatefulWidget {
   const DrawerPage({super.key});
@@ -10,6 +11,7 @@ class DrawerPage extends StatefulWidget {
 
 class _DrawerState extends State<DrawerPage> {
   void _showAlertDialog(BuildContext context) {
+    final AuthService auth = AuthService();
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoAlertDialog(
@@ -30,9 +32,9 @@ class _DrawerState extends State<DrawerPage> {
           ),
           CupertinoDialogAction(
             isDestructiveAction: true,
-            onPressed: () {
+            onPressed: () async {
+              await auth.SignOut();
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/auth');
             },
             child: const Text('Yes'),
           ),

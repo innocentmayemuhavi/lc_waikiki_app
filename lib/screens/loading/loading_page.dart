@@ -17,7 +17,7 @@ class _LoadingState extends State<Loading> {
     return const CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         automaticallyImplyLeading: false,
-        middle: Text('Loading Please Wait'),
+        middle: Text('Loading Please Wait...'),
       ),
       child: Center(
         child: CupertinoActivityIndicator(),

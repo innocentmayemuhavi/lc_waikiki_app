@@ -129,7 +129,7 @@ class _ProductPageState extends State<ProductPage> {
                     height: 10,
                   ),
                   DropdownButtonFormField<String>(
-                    value: selectedOption,
+                    value: size,
                     decoration: const InputDecoration(
                       labelText: 'Select Size',
                       focusedBorder: UnderlineInputBorder(
@@ -220,11 +220,6 @@ class _ProductPageState extends State<ProductPage> {
 
                       print("Updated Quantity: $quantity");
                       print("Updated Size: $size");
-
-                      ///  _showAlertDialog(context, product);
-                      //
-                      // ...
-
                       _showAlertDialog(context, product);
                     },
                     child: const Text('Add To Cart'),

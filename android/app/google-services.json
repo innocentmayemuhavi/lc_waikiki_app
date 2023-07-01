@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1029646962297",
+    "firebase_url": "https://testingdatabase-5321d-default-rtdb.firebaseio.com",
+    "project_id": "testingdatabase-5321d",
+    "storage_bucket": "testingdatabase-5321d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029646962297:android:a43dd0554c15e09a550ea8",
+        "android_client_info": {
+          "package_name": "com.example.lc_waikiki_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029646962297-7nemrhp9o35jtimdaoaep6kdpp8h2ivn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGkMr8EnHMOyWiFiVeOpfZViKzxNOolzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029646962297-7nemrhp9o35jtimdaoaep6kdpp8h2ivn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

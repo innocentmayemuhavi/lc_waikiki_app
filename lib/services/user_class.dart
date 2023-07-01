@@ -1,6 +1,6 @@
-class User {
-  String email;
-  String password;
+class UserClass {
+  String uid;
+ 
 
-  User({required this.email, required this.password});
+  UserClass({required this.uid});
 }
