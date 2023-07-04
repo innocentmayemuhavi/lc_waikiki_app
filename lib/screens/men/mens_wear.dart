@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lc_waikiki_app/screens/drawer.dart';
+import 'package:lc_waikiki_app/screens/drawer/drawer.dart';
 import 'package:lc_waikiki_app/services/card_data.dart';
 import 'package:lc_waikiki_app/services/product_card.dart';
 
@@ -82,7 +82,7 @@ class _MensPageState extends State<MensPage> {
           actions: <Widget>[
             IconButton(
               onPressed: () => {Navigator.pushNamed(context, '/cart')},
-              icon: const Icon(Icons.shopping_basket),
+               icon: const Icon(Icons.shopping_cart_sharp),
               tooltip: 'Cart',
             )
           ],

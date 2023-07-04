@@ -1,34 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lc_waikiki_app/context.dart';
-import 'package:lc_waikiki_app/screens/auth/auth.dart';
-import 'package:lc_waikiki_app/screens/bags.dart';
-import 'package:lc_waikiki_app/screens/checkout.dart';
-import 'package:lc_waikiki_app/screens/error_page.dart';
-import 'package:lc_waikiki_app/screens/home.dart';
-import 'package:lc_waikiki_app/screens/ladies_wear.dart';
-import 'package:lc_waikiki_app/screens/loading/loading_page.dart';
-import 'package:lc_waikiki_app/screens/mens_wear.dart';
-import 'package:lc_waikiki_app/screens/cart.dart';
-import 'package:lc_waikiki_app/screens/product_page.dart';
 
 void main() async {
   WidgetsFlutterBinding().ensureSemantics();
   await Firebase.initializeApp();
-  runApp(MaterialApp(
-    initialRoute: '/',
-    routes: {
-      '/': (context) => const Context(),
-      '/home': (context) => const HomePage(),
-      '/loading': (context) => const Loading(),
-      '/cart': (context) => const CartPage(),
-      '/auth': (context) => const AuthPage(),
-      '/checkout': (context) => const CheckOutPage(),
-      '/mens_wear': (context) => const MensPage(),
-      '/ladies_wear': (context) => const LadiesWearPage(),
-      '/bags': (context) => const BagsPage(),
-      '/unknown': (context) => const ErrorPage(),
-      '/productpage': (context) => const ProductPage()
-    },
+  runApp(const MaterialApp(
+    home: Context(),
   ));
 }

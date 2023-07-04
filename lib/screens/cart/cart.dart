@@ -24,7 +24,7 @@ class _CartPageState extends State<CartPage> {
         actions: <Widget>[
           IconButton(
             onPressed: () => {},
-            icon: const Icon(Icons.shopping_basket),
+            icon: const Icon(Icons.shopping_cart_sharp),
             tooltip: 'Cart',
           )
         ],

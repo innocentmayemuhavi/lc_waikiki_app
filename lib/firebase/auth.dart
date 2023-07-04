@@ -29,7 +29,7 @@ class AuthService {
       );
       return _userFromFirebaseUser(userData);
     } catch (e) {
-      print('error');
+      print(e);
       return null;
     }
   }
@@ -50,7 +50,7 @@ class AuthService {
 
       return _userFromFirebaseUser(userData);
     } catch (e) {
-      print('error');
+      print(e);
       return null;
     }
   }

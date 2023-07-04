@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lc_waikiki_app/screens/drawer.dart';
+import 'package:lc_waikiki_app/screens/drawer/drawer.dart';
 import 'package:lc_waikiki_app/services/product_data.dart';
 
-import '../services/card_data.dart';
+import '../../services/card_data.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({Key? key}) : super(key: key);
@@ -40,7 +40,8 @@ class _ProductPageState extends State<ProductPage> {
             isDestructiveAction: true,
             onPressed: () {
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/cart');
+
+              // Navigator.pushNamed(context, '/cart');
             },
             child: const Text(
               'View Cart',
@@ -89,14 +90,13 @@ class _ProductPageState extends State<ProductPage> {
         actions: <Widget>[
           IconButton(
             onPressed: () => {Navigator.pushNamed(context, '/cart')},
-            icon: const Icon(Icons.shopping_basket),
+            icon: const Icon(Icons.shopping_cart_sharp),
             tooltip: 'Cart',
           ),
         ],
       ),
       body: ListView(
         children: <Widget>[
-          const CupertinoActivityIndicator(),
           if (data != null)
             Container(
               child: Column(

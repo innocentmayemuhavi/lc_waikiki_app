@@ -129,6 +129,34 @@ class _DrawerState extends State<DrawerPage> {
                 ListTile(
                   onTap: () => {
                     Navigator.pop(context),
+                    Navigator.pushNamed(context, '/mens_t_shirts')
+                    // Navigator.pushNamed(context, '/auth')
+                  },
+                  leading: const Icon(
+                    Icons.man_rounded,
+                    size: 22,
+                  ),
+                  title: const Text(
+                    'Mens T-Shirts',
+                  ),
+                ),
+                ListTile(
+                  onTap: () => {
+                    Navigator.pop(context),
+                    Navigator.pushNamed(context, '/ladies_t_shirts')
+                    // Navigator.pushNamed(context, '/auth')
+                  },
+                  leading: const Icon(
+                    Icons.woman_rounded,
+                    size: 22,
+                  ),
+                  title: const Text(
+                    'Ladies T-Shirts',
+                  ),
+                ),
+                ListTile(
+                  onTap: () => {
+                    Navigator.pop(context),
                     Navigator.pushNamed(context, '/bags')
                     // Navigator.pushNamed(context, '/auth')
                   },

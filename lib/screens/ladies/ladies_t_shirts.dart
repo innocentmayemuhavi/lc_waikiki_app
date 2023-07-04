@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:lc_waikiki_app/screens/drawer.dart';
+import 'package:lc_waikiki_app/screens/drawer/drawer.dart';
 import 'package:lc_waikiki_app/services/card_data.dart';
 import 'package:lc_waikiki_app/services/product_card.dart';
 
-class LadiesWearPage extends StatefulWidget {
-  const LadiesWearPage({super.key});
+class LadiesTShirts extends StatefulWidget {
+  const LadiesTShirts({super.key});
 
   @override
-  State<LadiesWearPage> createState() => _LadiesWearPageState();
+  State<LadiesTShirts> createState() => _LadiesTShirtsState();
 }
 
-class _LadiesWearPageState extends State<LadiesWearPage> {
+class _LadiesTShirtsState extends State<LadiesTShirts> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   List<Product> products = [
     const Product(
@@ -82,7 +82,7 @@ class _LadiesWearPageState extends State<LadiesWearPage> {
           actions: <Widget>[
             IconButton(
               onPressed: () => {Navigator.pushNamed(context, '/cart')},
-              icon: const Icon(Icons.shopping_basket),
+             icon: const Icon(Icons.shopping_cart_sharp),
               tooltip: 'Cart',
             )
           ],

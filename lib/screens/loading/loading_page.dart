@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -14,12 +15,8 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
-    return const CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        automaticallyImplyLeading: false,
-        middle: Text('Loading Please Wait...'),
-      ),
-      child: Center(
+    return const Scaffold(
+      body: Center(
         child: CupertinoActivityIndicator(),
       ),
     );

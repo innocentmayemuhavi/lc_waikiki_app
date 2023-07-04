@@ -16,6 +16,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     final data = Provider.of<UserClass?>(context);
     print('maye app initializing');
+    print(data);
     if (data != null) {
       return const HomePage();
     } else {
