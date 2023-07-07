@@ -132,6 +132,7 @@ class _CartPageState extends State<CartPage> {
                             itemBuilder: (context, index) {
                               ProductData product = cartItems[index];
                               return ListTile(
+                                onLongPress: () {},
                                 leading: CircleAvatar(
                                   radius: 30,
                                   child: Image.asset(product.image),
