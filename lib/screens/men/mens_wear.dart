@@ -82,7 +82,7 @@ class _MensPageState extends State<MensPage> {
           actions: <Widget>[
             IconButton(
               onPressed: () => {Navigator.pushNamed(context, '/cart')},
-               icon: const Icon(Icons.shopping_cart_sharp),
+              icon: const Icon(Icons.shopping_cart_sharp),
               tooltip: 'Cart',
             )
           ],

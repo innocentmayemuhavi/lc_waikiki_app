@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lc_waikiki_app/firebase/database.dart';
 import 'package:lc_waikiki_app/screens/drawer/drawer.dart';
 import 'package:lc_waikiki_app/services/product_data.dart';
+import 'package:lc_waikiki_app/services/user_class.dart';
+import 'package:provider/provider.dart';
 
 import '../../services/card_data.dart';
 
@@ -65,13 +68,17 @@ class _ProductPageState extends State<ProductPage> {
   String? selectedOption;
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserClass?>(context);
+    final uid = user!.uid.toString();
+    DatabaseService databaseService = DatabaseService(uid: uid);
     final Product? data =
         ModalRoute.of(context)?.settings.arguments as Product?;
     ProductData product = ProductData(
       size: size,
-      Quantity: quantity,
+      quantity: quantity,
       price: data!.price * quantity,
       name: data.name,
+      image: data.image,
     );
 
     return Scaffold(
@@ -162,7 +169,7 @@ class _ProductPageState extends State<ProductPage> {
                   DropdownButtonFormField<int>(
                     value: quantity,
                     decoration: const InputDecoration(
-                      labelText: 'Select Quantity',
+                      labelText: 'Select quantity',
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
@@ -171,7 +178,7 @@ class _ProductPageState extends State<ProductPage> {
                         horizontal: 10,
                       ),
                       prefix: Text(
-                        'Quantity:',
+                        'quantity:',
                         style: TextStyle(fontSize: 14),
                       ),
                     ),
@@ -212,14 +219,16 @@ class _ProductPageState extends State<ProductPage> {
                       setState(() {
                         product = ProductData(
                           size: size,
-                          Quantity: quantity,
+                          quantity: quantity,
+                          image: data.image,
                           price: data.price * quantity,
                           name: data.name,
                         );
                       });
 
-                      print("Updated Quantity: $quantity");
+                      print("Updated quantity: $quantity");
                       print("Updated Size: $size");
+                      databaseService.addToCart(product);
                       _showAlertDialog(context, product);
                     },
                     child: const Text('Add To Cart'),
