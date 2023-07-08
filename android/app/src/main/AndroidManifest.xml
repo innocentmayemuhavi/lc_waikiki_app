@@ -2,7 +2,7 @@
     <application
         android:label="lc_waikiki_app"
         android:name="${applicationName}"
-        android:icon="@mipmap/lcwaiki logo">
+        android:icon="@mipmap/lcwaikilogo">
         <activity
             android:name=".MainActivity"
             android:exported="true"
