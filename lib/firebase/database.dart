@@ -19,24 +19,66 @@ class DatabaseService {
     });
   }
 
-  Future<void> addToCart(ProductData product) async {
+  Future<void> addToCart(String userId, ProductData product) async {
     try {
-      await _userbasket.add(product.toMap());
+      final userCartDoc = _userbasket.doc(userId);
+      DocumentSnapshot<Map<String, dynamic>> snapshot =
+          await FirebaseFirestore.instance.collection('cart').doc(userId).get();
+
+      if (snapshot.exists) {
+        List<dynamic> items = snapshot.data()?['items'] ?? [];
+        items.add(product.toMap());
+        await userCartDoc.update({
+          'items': items,
+        });
+      } else {
+        await userCartDoc.set({
+          'items': [product.toMap()]
+        });
+      }
     } catch (e) {
       print('Error adding to cart: $e');
     }
   }
 
-  Stream<List<ProductData>> getCart() {
-    return _userbasket.snapshots().map((snapshot) {
-      return snapshot.docs.map((doc) {
-        Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+  Future<void> removeFromCart(String userId, ProductData product) async {
+    try {
+      final userCartDoc = _userbasket.doc(userId);
+      DocumentSnapshot<Map<String, dynamic>> snapshot =
+          await FirebaseFirestore.instance.collection('cart').doc(userId).get();
+
+      if (snapshot.exists) {
+        List<dynamic> items = snapshot.data()?['items'] ?? [];
+        items.removeWhere((item) =>
+            item['name'] == product.name &&
+            item['quantity'] == product.quantity &&
+            item['size'] == product.size);
+
+        await userCartDoc.update({
+          'items': items,
+        });
+      }
+    } catch (e) {
+      print('Error removing from cart: $e');
+    }
+  }
+
+  Stream<List<ProductData>> getCart(String userId) {
+    return _userbasket.doc(userId).snapshots().map((snapshot) {
+      if (!snapshot.exists) {
+        return [];
+      }
+
+      final data = snapshot.data() as Map<String, dynamic>;
+      final items = data['items'] as List<dynamic>;
+
+      return items.map((item) {
         return ProductData(
-            name: data['name'],
-            image: data['image'],
-            price: data['price'],
-            quantity: data['quantity'],
-            size: data['size']);
+            name: item['name'],
+            image: item['image'],
+            price: item['price'],
+            quantity: item['quantity'],
+            size: item['size']);
       }).toList();
     });
   }

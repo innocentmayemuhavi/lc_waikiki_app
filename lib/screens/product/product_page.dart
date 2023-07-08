@@ -37,7 +37,7 @@ class _ProductPageState extends State<ProductPage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text('Cancel'),
+            child: const Text('Back'),
           ),
           CupertinoDialogAction(
             isDestructiveAction: true,
@@ -47,7 +47,7 @@ class _ProductPageState extends State<ProductPage> {
               // Navigator.pushNamed(context, '/cart');
             },
             child: const Text(
-              'View Cart',
+              'Done',
               style: TextStyle(
                 color: Colors.green,
                 fontWeight: FontWeight.w700,
@@ -61,6 +61,7 @@ class _ProductPageState extends State<ProductPage> {
 
   int quantity = 1;
   String size = 'Small';
+  bool isLoading = false;
 
   List<int> options = [1, 2, 3];
 
@@ -214,9 +215,8 @@ class _ProductPageState extends State<ProductPage> {
                       ),
                     ),
                     onPressed: () async {
-                      // ...
-
                       setState(() {
+                        isLoading = true;
                         product = ProductData(
                           size: size,
                           quantity: quantity,
@@ -226,12 +226,19 @@ class _ProductPageState extends State<ProductPage> {
                         );
                       });
 
-                      print("Updated quantity: $quantity");
-                      print("Updated Size: $size");
-                      databaseService.addToCart(product);
-                      _showAlertDialog(context, product);
+                      try {
+                        await databaseService.addToCart(uid, product);
+                        setState(() {
+                          isLoading = false;
+                        });
+                        _showAlertDialog(context, product);
+                      } catch (e) {
+                        print(e);
+                      }
                     },
-                    child: const Text('Add To Cart'),
+                    child: isLoading
+                        ? const CupertinoActivityIndicator()
+                        : const Text('Add To Cart'),
                   ),
                 ],
               ),

@@ -14,53 +14,29 @@ class _LadiesWearPageState extends State<LadiesWearPage> {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
   List<Product> products = [
     const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
+        name: 'Ladies Modern Streach Full Zip',
+        price: 41,
+        image: 'assets/images/10-24102A.jpg'),
+    const Product(
+        name: 'Ladies Colorblock Wind Jacket',
+        price: 36,
+        image: 'assets/images/10-25058A.jpg'),
     const Product(
         name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
+        price: 48,
         image: 'assets/10-11017A.jpg'),
     const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
+        name: 'adies Pullover L/S Hood',
+        price: 33,
         image: 'assets/10-11017A.jpg'),
     const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
+        name: 'Ladies Sonoma Hybrid Knit Jacket',
+        price: 40,
+        image: 'assets/images/10-24097A.jpg'),
     const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
-    const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
-    const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
-    const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
-    const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
-    const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
-    const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
-    const Product(
-        name: 'Ladies Voyage Fleece Jacket',
-        price: 1200,
-        image: 'assets/10-11017A.jpg'),
+        name: 'Ladies Yerba Knit Quarter Zip',
+        price: 37,
+        image: 'assets/images/10-24099A.jpg'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -82,19 +58,26 @@ class _LadiesWearPageState extends State<LadiesWearPage> {
           actions: <Widget>[
             IconButton(
               onPressed: () => {Navigator.pushNamed(context, '/cart')},
-            icon: const Icon(Icons.shopping_cart_sharp),
+              icon: const Icon(Icons.shopping_cart_sharp),
               tooltip: 'Cart',
             )
           ],
         ),
-        body: GridView.count(
-          crossAxisCount: 2,
-          scrollDirection: Axis.vertical,
-          mainAxisSpacing: 2,
-          crossAxisSpacing: 2,
-          padding: const EdgeInsets.all(10),
-          childAspectRatio: 0.75,
-          children: products.map((prod) => ProductCard(data: prod)).toList(),
+        body: ListView(
+          children: [
+            GridView.count(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisCount: 2,
+              scrollDirection: Axis.vertical,
+              mainAxisSpacing: 2,
+              crossAxisSpacing: 2,
+              padding: const EdgeInsets.all(10),
+              childAspectRatio: 0.75,
+              children:
+                  products.map((prod) => ProductCard(data: prod)).toList(),
+            )
+          ],
         ));
   }
 }

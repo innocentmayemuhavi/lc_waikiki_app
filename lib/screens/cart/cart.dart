@@ -14,6 +14,7 @@ class CartPage extends StatefulWidget {
 
 class _CartPageState extends State<CartPage> {
   List<String> cartItems = [];
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class _CartPageState extends State<CartPage> {
         ],
       ),
       body: StreamBuilder<List<ProductData>>(
-        stream: databaseService.getCart(),
+        stream: databaseService.getCart(uid),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(
@@ -138,7 +139,38 @@ class _CartPageState extends State<CartPage> {
                                   child: Image.asset(product.image),
                                 ),
                                 title: Text(product.name),
-                                subtitle: Text('Price: KES ${product.price}'),
+                                subtitle: Row(
+                                  children: [
+                                    Expanded(
+                                        flex: 2,
+                                        child:
+                                            Text('Qty: ${product.quantity}')),
+                                    Expanded(
+                                        flex: 3,
+                                        child: Text('Size: ${product.size}')),
+                                    Expanded(
+                                        flex: 3,
+                                        child: Text('KES:${product.price}')),
+                                  ],
+                                ),
+                                trailing: isLoading
+                                    ? const CupertinoActivityIndicator()
+                                    : IconButton(
+                                        tooltip: 'Remove From Cart',
+                                        onPressed: () async {
+                                          setState(() {
+                                            isLoading = true;
+                                          });
+                                          await databaseService.removeFromCart(
+                                              uid, product);
+                                          setState(() {
+                                            isLoading = false;
+                                          });
+                                        },
+                                        icon: const Icon(
+                                          Icons.delete_forever_outlined,
+                                          color: Colors.black,
+                                        )),
                               );
                             },
                           ),
