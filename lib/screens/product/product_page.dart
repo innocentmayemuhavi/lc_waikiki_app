@@ -121,13 +121,19 @@ class _ProductPageState extends State<ProductPage> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Text(
-                    " KES ${data.price.toString()}",
+                    " KES ${(data.price * 140).toString()}",
                     style: const TextStyle(
                       color: Colors.grey,
-                      fontSize: 15,
+                      fontSize: 19,
                       fontWeight: FontWeight.w500,
                     ),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   const Divider(
                     height: 2,
@@ -221,7 +227,7 @@ class _ProductPageState extends State<ProductPage> {
                           size: size,
                           quantity: quantity,
                           image: data.image,
-                          price: data.price * quantity,
+                          price: (data.price * 140) * quantity,
                           name: data.name,
                         );
                       });

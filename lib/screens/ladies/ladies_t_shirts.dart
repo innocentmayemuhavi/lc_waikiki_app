@@ -15,83 +15,83 @@ class _LadiesTShirtsState extends State<LadiesTShirts> {
   List<Product> products = [
     const Product(
         name: 'Ladies Chrome T-Shirt',
-        price: 1200,
+        price: 63,
         image: 'assets/images/10-23180A.jpg'),
     const Product(
         name: 'Ladies Google New York T-Shirt',
-        price: 1200,
+        price: 70,
         image: 'assets//images/10-23226A.jpg'),
     const Product(
         name: 'Ladies Gmail T-Shirt',
-        price: 1200,
+        price: 50,
         image: 'assets/images/10-23179A.jpg'),
     const Product(
         name: 'Ladies G Logo White T-Shirt',
-        price: 1200,
+        price: 57,
         image: 'assets/images/10-23178A.jpg'),
     const Product(
         name: 'Ladies Android Pride T-Shirt',
-        price: 1200,
+        price: 51,
         image: 'assets/images/10-23177A.jpg'),
     const Product(
         name: 'Ladies Ringspun Crew Neck',
-        price: 1200,
+        price: 56,
         image: 'assets/images/10-23172A.jpg'),
     const Product(
         name: 'Ladies Tri-Blend V-Neck T-Shirt',
-        price: 1200,
+        price: 64,
         image: 'assets/images/10-23227A.jpg'),
     const Product(
         name: 'Bella Ladies Favorite Tee',
-        price: 1200,
+        price: 65,
         image: 'assets/images/10-23228A.jpg'),
     const Product(
         name: 'Ladies Bamboo T-Shirt',
-        price: 1200,
+        price: 69,
         image: 'assets/images/10-23176A.jpg'),
     const Product(
         name: 'Ladies L/S Colorblock Raglan',
-        price: 1200,
+        price: 40,
         image: 'assets/images/10-23173A.jpg'),
     const Product(
         name: 'Bella Scoop-Neck Ladies T-Shirt',
-        price: 1200,
+        price: 59,
         image: 'assets/images/10-23171A.jpg'),
     const Product(
         name: 'Ladies Not For Sale T-Shirt',
-        price: 1200,
+        price: 50,
         image: 'assets/images/10-23225A.jpg'),
     const Product(
         name: 'Ladies Android L/S Stretch T-Shirt',
-        price: 1200,
+        price: 62,
         image: 'assets/images/10-23198A.jpg'),
     const Product(
         name: 'Ladies Mountain View T-Shirt',
-        price: 1200,
+        price: 68,
         image: 'assets/images/10-23229A.jpg'),
     const Product(
         name: 'Ladies Blueprint for a Better Inbox T-Shirt',
-        price: 1200,
+        price: 32,
         image: 'assets/images/10-23169A.jpg'),
     const Product(
         name: 'Ladies Cotton Poly w/ Thermal Tee',
-        price: 1200,
+        price: 31,
         image: 'assets/images/10-23174A.jpg'),
     const Product(
         name: 'Ladies YouTube Favorite Tee',
-        price: 1200,
+        price: 41,
         image: 'assets/images/10-23073A.jpg'),
     const Product(
         name: 'MTV Ladies Yellow T-Shirt',
-        price: 1200,
+        price: 51,
         image: 'assets/images/10-23230A.jpg'),
     const Product(
         name: 'Womens Android Heart T-Shirt',
-        price: 1200,
+        price: 40,
         image: 'assets/images/10-23069A.jpg'),
     const Product(
         name: 'YouTube Organic Cotton T-Shirt - Grey',
-        price: 1200,
+        price: 55,
         image: 'assets/images/10-13058A.jpg'),
   ];
   @override

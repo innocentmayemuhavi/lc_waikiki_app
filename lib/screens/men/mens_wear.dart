@@ -15,67 +15,67 @@ class _MensPageState extends State<MensPage> {
   List<Product> products = [
     const Product(
         name: 'Mens Tech Shell Full-Zip',
-        price: 1200,
+        price: 34,
         image: 'assets/images/10-15068A.jpg'),
     const Product(
         name: 'Anvil L/S Crew Neck - Grey',
-        price: 1200,
+        price: 43,
         image: 'assets/images/10-14154A.jpg'),
     const Product(
         name: 'Green Flex Fleece Zip Hoodie',
-        price: 1200,
+        price: 44,
         image: 'assets/images/10-14157A.jpg'),
     const Product(
         name: 'Android Nylon Packable Jacket',
-        price: 1200,
+        price: 43,
         image: 'assets/images/10-15041A.jpg'),
     const Product(
         name: 'YouTube Ultimate Hooded Sweatshirt',
-        price: 1200,
+        price: 32,
         image: 'assets/images/10-14133A.jpg'),
     const Product(
         name: 'Grey Heather Fleece Zip Hoodie',
-        price: 1200,
+        price: 33,
         image: 'assets/images/10-14160A.jpg'),
     const Product(
         name: 'Vastrm Hoodie',
-        price: 1200,
+        price: 31,
         image: 'assets/images/10-14153A.jpg'),
     const Product(
         name: 'Recycled Plastic Bottle Hoodie - Green',
-        price: 1200,
+        price: 30,
         image: 'assets/images/10-14158A.jpg'),
     const Product(
         name: 'Rowan Pullover Hood',
-        price: 1200,
+        price: 43,
         image: 'assets/images/10-14152A.jpg'),
     const Product(
         name: 'Mens Voyage Fleece Jacket',
-        price: 1200,
+        price: 41,
         image: 'assets/images/10-14155A.jpg'),
     const Product(
         name: 'Eco-Jersey Chrome Zip Up Hoodie',
-        price: 1200,
+        price: 45,
         image: 'assets/images/10-14159A.jpg'),
     const Product(
         name: 'Android Colorblock Hooded Pullover',
-        price: 1200,
+        price: 40,
         image: 'assets/images/10-14146A.jpg'),
     const Product(
         name: 'Tri-blend Full-Zip Hoodie',
-        price: 1200,
+        price: 43,
         image: 'assets/images/10-14216A.jpg'),
     const Product(
         name: 'Fleece Full-Zip Hoodie',
-        price: 1200,
+        price: 32,
         image: 'assets/images/10-14215A.jpg'),
     const Product(
         name: 'Jacquard-Knit Full-Zip Fleece',
-        price: 1200,
+        price: 32,
         image: 'assets/images/10-14217A.jpg'),
     const Product(
         name: 'YouTube Unisex Flex Fleece Zip Hoodie',
-        price: 1200,
+        price: 55,
         image: 'assets/images/10-15103A.jpg'),
   ];
   @override
