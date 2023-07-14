@@ -12,10 +12,10 @@ class DatabaseService {
       FirebaseFirestore.instance.collection('cart');
 
   Future<void> updateUserData(
-    String total,
+    List<Cart> items,
   ) async {
     return await _userbasket.doc(uid).set({
-      'total': total,
+      'items': items,
     });
   }
 
@@ -27,6 +27,7 @@ class DatabaseService {
 
       if (snapshot.exists) {
         List<dynamic> items = snapshot.data()?['items'] ?? [];
+
         items.add(product.toMap());
         await userCartDoc.update({
           'items': items,
@@ -87,23 +88,9 @@ class DatabaseService {
     Map<String, dynamic>? data = snapshot.data() as Map<String, dynamic>?;
 
     return UserData(
-      uid: uid,
-      name: data?['name'] ?? 'new crew member',
-    );
-  }
-
-  List<Cart> _brewListFromSnapshot(QuerySnapshot snapshot) {
-    return snapshot.docs.map((doc) {
-      Map<String, dynamic>? data = doc.data() as Map<String, dynamic>?;
-
-      return Cart(
-        total: data?['total'] ?? '',
-      );
-    }).toList();
-  }
-
-  Stream<List<Cart>> get cart {
-    return _userbasket.snapshots().map(_brewListFromSnapshot);
+        uid: uid,
+        displayName: data?['displayName'] ?? 'new Customer',
+        phoneNumber: data?['phoneNumber'] ?? '0700000000');
   }
 
   Stream<UserData?> get userStoredData {

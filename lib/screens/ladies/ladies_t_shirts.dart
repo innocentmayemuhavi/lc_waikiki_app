@@ -20,7 +20,7 @@ class _LadiesTShirtsState extends State<LadiesTShirts> {
     const Product(
         name: 'Ladies Google New York T-Shirt',
         price: 70,
-        image: 'assets//images/10-23226A.jpg'),
+        image: 'assets/images/10-23226A.jpg'),
     const Product(
         name: 'Ladies Gmail T-Shirt',
         price: 50,

@@ -50,7 +50,7 @@ class _ProductCardState extends State<ProductCard> {
               ),
               Center(
                 child: Text(
-                  (widget.data.price*140).toString(),
+                  (widget.data.price * 140).toString(),
                   style: PriceTextStyles,
                   textAlign: TextAlign.center,
                 ),

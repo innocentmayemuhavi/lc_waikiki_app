@@ -1,6 +1,10 @@
 class UserData {
-  final String name;
+  final String displayName;
   final String uid;
+  final String phoneNumber;
 
-  UserData({required this.name, required this.uid});
+  UserData(
+      {required this.displayName,
+      required this.uid,
+      required this.phoneNumber});
 }

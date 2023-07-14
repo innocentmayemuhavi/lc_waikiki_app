@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           const Image(
                             image: AssetImage('assets/mens_tshirts.jpg'),
-                            height: 200,
+                            height: 250,
                             fit: BoxFit.cover,
                           ),
                           const SizedBox(
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           const Image(
                             image: AssetImage('assets/ladies_tshirts.jpg'),
-                            height: 200,
+                            height: 250,
                             fit: BoxFit.cover,
                           ),
                           const SizedBox(

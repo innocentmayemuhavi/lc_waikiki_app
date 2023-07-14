@@ -168,7 +168,7 @@ class _CartPageState extends State<CartPage> {
                                           });
                                         },
                                         icon: const Icon(
-                                          Icons.delete_forever_outlined,
+                                          Icons.delete,
                                           color: Colors.black,
                                         )),
                               );

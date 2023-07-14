@@ -18,6 +18,8 @@ class _AppState extends State<App> {
     print('maye app initializing');
     print(data);
     if (data != null) {
+        String displayName = data.displayName ?? '';
+      print('Display Name: $displayName');
       return const HomePage();
     } else {
       return const AuthPage();

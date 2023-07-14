@@ -20,7 +20,7 @@ class _MensTShirtsState extends State<MensTShirts> {
     const Product(
         name: 'Adult Android Superhero T-Shirt',
         price: 40,
-        image: 'assets//images/10-13239A.jpg'),
+        image: 'assets/images/10-13239A.jpg'),
     const Product(
         name: 'Mens Vintage Heather T-Shirt',
         price: 40,
@@ -98,17 +98,13 @@ class _MensTShirtsState extends State<MensTShirts> {
         price: 57,
         image: 'assets/images/10-13271A.jpg'),
     const Product(
-        name: 'Omi Tech Tee',
-        price: 66,
-        image: 'assets/images/10-13267A.jpg'),
+        name: 'Omi Tech Tee', price: 66, image: 'assets/images/10-13267A.jpg'),
     const Product(
         name: 'YouTube S/S Triblend T-Shirt',
         price: 45,
         image: 'assets/images/10-13278A.jpg'),
     const Product(
-        name: 'Nest T-Shirt',
-        price: 54,
-        image: 'assets/images/10-13241A.jpg'),
+        name: 'Nest T-Shirt', price: 54, image: 'assets/images/10-13241A.jpg'),
     const Product(
         name: '98 Short Sleeve Tee',
         price: 45,
@@ -140,7 +136,7 @@ class _MensTShirtsState extends State<MensTShirts> {
     const Product(
         name: 'YouTube Player T-Shirt - Unisex',
         price: 60,
-        image: 'assets//images/10-13097A.jpg'),
+        image: 'assets/images/10-13097A.jpg'),
     const Product(
         name: 'G Logo White T-Shirt',
         price: 50,
@@ -195,7 +191,7 @@ class _MensTShirtsState extends State<MensTShirts> {
             )
           ],
         ),
-        body:ListView(
+        body: ListView(
           children: [
             GridView.count(
               shrinkWrap: true,

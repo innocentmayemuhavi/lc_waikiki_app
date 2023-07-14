@@ -7,7 +7,10 @@ class AuthService {
 
   UserClass? _userFromFirebaseUser(User? userData) {
     if (userData != null) {
-      return UserClass(uid: userData.uid);
+      return UserClass(
+          uid: userData.uid,
+          displayName: userData.displayName,
+          phoneNumber: userData.phoneNumber);
     }
     return null;
   }
@@ -18,15 +21,25 @@ class AuthService {
   Future registerWithEmailAndPassword(
     String email,
     String password,
+    String displayName,
+    String phoneNumber,
   ) async {
     try {
       UserCredential userCredential = await _auth
           .createUserWithEmailAndPassword(email: email, password: password);
+
+      User? user = FirebaseAuth.instance.currentUser;
+
+      await user!.updateDisplayName(displayName);
+      await user.updatePhoneNumber(phoneNumber as PhoneAuthCredential);
       User? userData = userCredential.user;
+
+      await getUserData();
       //creating user data
       await DatabaseService(uid: userData!.uid).updateUserData(
-        '0',
+        [],
       );
+
       return _userFromFirebaseUser(userData);
     } catch (e) {
       print(e);
@@ -39,6 +52,18 @@ class AuthService {
       await _auth.signOut();
     } catch (e) {
       print(e.toString());
+    }
+  }
+
+  getUserData() {
+    User? user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      String uid = user.uid;
+      String? email = user.email;
+      String? displayName = user.displayName;
+    } else {
+      print('No user is currently signed in.');
     }
   }
 

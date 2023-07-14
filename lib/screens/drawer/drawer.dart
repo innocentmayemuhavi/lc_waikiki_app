@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:lc_waikiki_app/firebase/auth.dart';
+import 'package:lc_waikiki_app/services/user_class.dart';
+import 'package:provider/provider.dart';
 
 class DrawerPage extends StatefulWidget {
   const DrawerPage({super.key});
@@ -45,6 +47,10 @@ class _DrawerState extends State<DrawerPage> {
 
   @override
   Widget build(BuildContext context) {
+    final data = Provider.of<UserClass?>(context);
+    String displayName = data!.displayName ?? '';
+    String phoneNumber = data.phoneNumber ?? '07XXXXXXXX';
+
     return Drawer(
       backgroundColor: Colors.white,
       elevation: 0,
@@ -52,6 +58,29 @@ class _DrawerState extends State<DrawerPage> {
       child: ListView(
           padding: const EdgeInsets.fromLTRB(20, 30, 20, 30),
           children: <Widget>[
+            const SizedBox(
+              height: 30,
+            ),
+            ListTile(
+              onTap: () => {
+                // Navigator.pop(context),
+                // Navigator.pushNamed(context, '/')
+                // Navigator.pushNamed(context, '/auth')
+              },
+              leading: const CircleAvatar(
+                radius: 30,
+                backgroundImage: AssetImage(
+                  "assets/profile.jpg",
+                ),
+              ),
+              title: Text(
+                'Hey $displayName',
+                style: const TextStyle(color: Colors.grey),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             Row(
               children: [
                 IconButton(
@@ -171,6 +200,7 @@ class _DrawerState extends State<DrawerPage> {
                 ListTile(
                   onTap: () => {
                     Navigator.pop(context),
+                    Navigator.pushReplacementNamed(context, '/'),
                     _showAlertDialog(context),
                   },
                   leading: const Icon(
